@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,intial scale=1.0">
 	<link rel="stylesheet" href="style.css">
-		<title>Trafalgar Landing Page-Figma</title>
+		<title>Medical Center</title>
 		<link rel="icon" href="img/logo.png">
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,13 +27,20 @@
 						</a>
 					</div>
 		
-					<nav id="nav">
-						<a href="#" class="">Home</a>
-						<a href="#" class="">Find a doctor</a>
-						<a href="#" class="">Apps</a>
-						<a href="#" class="">Testimonials</a>
-						<a href="#" class="">About as</a>
-					</nav>
+					<button class="ham-hidden ham-menu" id="ham-button">
+						<svg width="30" height="25">
+						<rect class="svg" rx="3" ry="5" width="30" height="4"></rect>
+						<rect class="svg" y="10" rx="3" ry="5" width="30" height="4"></rect>
+						<rect class="svg" y="20" rx="3" ry="5" width="30" height="4"></rect>
+					  </svg>
+						</button>
+				<nav id="nav" class="">
+					<a href="#" class="" data-button="home">Home</a>
+					<a href="#services" class="" data-button="services">Find a doctor</a>
+					<a href="#apps" class="" data-button="apps">Apps</a>
+					<a href="#testimonials" class="" data-button="testimonials">Testimonials</a>
+					<a href="#about-us" class="" data-button="about-us">About as</a>
+				</nav>
 				</div>
 				
 				<div class="first-sec">
@@ -48,7 +55,7 @@
 		
 </header>
 
-<section class="section" id="section">
+<section class="section" id="services">
 	
 	<div class="container">
 		<div class="second-sec">
@@ -75,7 +82,7 @@
 
 			<div class="card">
 				<a href="#">
-					<img  src="img/Frame(2).png" alt="">
+					<img  src="img/Frame-2.png" alt="">
 					<p>Consultation</p>
 					<p>Free consultation with our trusted doctors and get the best recomendations</p>
 				</a>
@@ -83,7 +90,7 @@
 
 			<div class="card">
 				<a href="#">
-					<img  src="img/Frame(3).png" alt="">
+					<img  src="img/Frame-3.png" alt="">
 					<p>Details info</p>
 					<p>Free consultation with our trusted doctors and get the best recomendations</p>
 				</a>
@@ -91,7 +98,7 @@
 
 			<div class="card">
 				<a href="#">
-					<img  src="img/Frame(4).png" alt="">
+					<img  src="img/Frame-4.png" alt="">
 					<p>Emergency care</p>
 					<p>You can get 24/7 urgent care for yourself or your children and your lovely family</p>
 				</a>
@@ -99,7 +106,7 @@
 
 			<div class="card">
 				<a href="#">
-					<img  src="img/Frame(5).png" alt="">
+					<img  src="img/Frame-5.png" alt="">
 					<p>Tracking</p>
 					<p>Track and save your medical history and health data </p>
 				</a>
@@ -112,7 +119,7 @@
 </section>
 
 
-<section class="section" id="section">
+<section class="section" id="apps">
 	<div class="container">
 
 		<div class="third-sec">
@@ -148,7 +155,7 @@
 </section>
 
 
-<section class="section" id="section">
+<section class="section" id="testimonials">
 
 	<div class="container">
 		<div class="blue-back" data-tab-content id="slide-1">
@@ -224,20 +231,20 @@
 						</div>
 
 <div class="slider-buttons">
-	<button class="slider-arrow" id="slider-prev"><span>&#129104;</span></button>
-	<button class="slider-dot" data-tab="slide-1"></button>
+	<button class="slider-arrow" id="slider-prev">&#129104;</button>
+	<button class="slider-dot active" data-tab="slide-1"></button>
 	<button class="slider-dot" data-tab="slide-2"></button>
 	<button class="slider-dot" data-tab="slide-3"></button>
 	<button class="slider-dot" data-tab="slide-4"></button>
-	<button class="slider-arrow" id="slider-next"><span>&#129106;</span></button>
+	<button class="slider-arrow" id="slider-next">&#129106;</button>
 </div>
 	</div>
 </section>
 
-	<section class="doc-section">
+	<section class="doc-section" id="about-us">
 		<div class="container">
 	<div class="last-sec">
-		<p id="p-main-3">Check out our latest article</p>
+		<p id="p-main-4">Check out our latest article</p>
 
 	<div class="doc-cards">
 		<div class="doc-card">
@@ -290,33 +297,33 @@
 		<div class="row-2 rows">
 			<h3>Company</h3>
 
-			<p class="footer-p">About</p>
-			<p class="footer-p">Testimonials</p>
-			<p class="footer-p">Find a doctor</p>
-			<p class="footer-p">Apps</p>
-
+			<a class="footer-a" href="#about-us">About</a>
+			<a class="footer-a" href="#testimonials">Testimonials</a>
+			<a class="footer-a" href="#services">Find a doctor</a>
+			<a class="footer-a" href="#apps">Apps</a>
 		</div>
 
 		<div class="row-3 rows">
 			<h3>Region</h3>
 
-			<p class="footer-p">Indonesia</p>
-			<p class="footer-p">Singapore</p>
-			<p class="footer-p">Hongkong</p>
-			<p class="footer-p">Canada</p>
+			<a class="footer-a" href="#">Indonesia</a>
+			<a class="footer-a" href="#">Singapore</a>
+			<a class="footer-a" href="#">Hongkong</a>
+			<a class="footer-a" href="#">Canada</a>
 		</div>
 
 		<div class="row-4 rows">
 			<h3>Help</h3>
 
-			<p class="footer-p">Help center</p>
-			<p class="footer-p">Contact Support</p>
-			<p class="footer-p">Instructions</p>
-			<p class="footer-p">How it works</p>
+			<a class="footer-a" href="#">Help center</a>
+			<a class="footer-a" href="#">Contact Support</a>
+			<a class="footer-a" href="#">Instructions</a>
+			<a class="footer-a" href="#">How it works</a>
 
 		</div>
 		
 	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script src="main.js"></script>
 </body>
 </html>

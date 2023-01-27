@@ -1,34 +1,187 @@
-const tabHeaders = document.querySelectorAll('[data-tab]');
+$("body").on('click', '[href*="#"]', function(e){
+    let fixed_offset = 100;
+    $('html,body').stop().animate({ scrollTop: $(this.hash).offset().top - fixed_offset }, 500);
+    e.preventDefault();
+  });
 
-const contentBoxes = document.querySelectorAll('[data-tab-content]');
+const prev = document.getElementById('slider-prev'),
+      next = document.getElementById('slider-next'),
+      slides = document.querySelectorAll('[data-tab-content]'),
+      dots = document.querySelectorAll('.slider-dot');
 
-const sliderArrow = document.querySelectorAll('.slider-arrow');
-
-tabHeaders.forEach(function(item){
-
-   item.addEventListener('click', function(){
- 
-     contentBoxes.forEach(function(item){
-         item.classList.add('hidden');
-     });
-
-     const contentBox = document.querySelector('#' +  this.dataset.tab);
-     contentBox.classList.remove('hidden');
-
-   });
-
-});
+let index = 0;
 
 
-
-let array = [2005,5,1.5,"Arkadi","Pult"];
-
-for(i = 0; i < array.length; i++){
-  if(array[i]=="Pult"){
-    continue;
-  }
-  console.log(array[i]);
+const activeSlide = n => {
+    for(slide of slides){
+        slide.classList.add('hidden');
+    }
+    slides[n].classList.remove('hidden');
 }
+
+const activeDot = n => {
+    for(dot of dots){
+        dot.classList.remove('active');
+    }
+    dots[n].classList.add('active');
+    console.log(n);
+}
+
+const nextSlide = () => {
+    if(index == slides.length - 1) {
+        index = 0;
+        prepareCurrentSlide(index);
+
+    } else{
+        index++;
+        prepareCurrentSlide(index);
+    }
+    
+}
+
+const prepareCurrentSlide = ind => {
+    activeSlide(index);
+    activeDot(index);
+}
+
+const prevSlide = () =>{
+    if(index == 0) {
+        index = slides.length - 1;
+        prepareCurrentSlide(index);
+    } else{
+        index--;
+        prepareCurrentSlide(index);
+    }
+}
+
+dots.forEach((item, indexDot) => {
+    item.addEventListener('click', () => {
+        index = indexDot;
+        prepareCurrentSlide(index);
+    })
+})
+
+
+next.addEventListener('click', nextSlide);
+prev.addEventListener('click', prevSlide);
+
+const hamButton = document.getElementById('ham-button');
+const navBar = document.querySelector('#nav');
+
+    hamButton.addEventListener('click', () =>{
+        navBar.classList.toggle('nav-hidden');
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const dots = document.querySelectorAll('[data-tab]');
+
+// const contentBoxes = document.querySelectorAll('.blue-back');
+
+// const sliderArrow = document.querySelectorAll('.slider-arrow');
+
+// const sliderPrev = document.getElementById('slider-prev');
+// const sliderNext = document.getElementById('slider-next');
+
+// let index = 1;
+
+// dots.forEach(function(item){
+
+//    item.addEventListener('click', function(){
+ 
+//      contentBoxes.forEach(function(item){
+//          item.classList.add('hidden');
+//      });
+//      const contentBox = document.querySelector('#' +  this.dataset.tab);
+//      contentBox.classList.remove('hidden');
+//      index += contentBox;
+
+//    });
+// });
+
+
+
+// sliderArrow.forEach(function(item){
+
+//   sliderPrev.addEventListener('click', () => {
+//     index = index - 1;
+//     if(index < 1){
+//       index = contentBoxes.length;
+//     }
+//   });
+
+//   sliderNext.addEventListener('click', () => {
+//     index++;
+//     if(index > contentBoxes.length){
+//       index = 1;
+//     }
+//     console.log(index);
+//   });
+
+
+//   item.addEventListener('click', function(){
+    
+//     contentBoxes.forEach(function(item){
+//         item.classList.add('hidden');
+
+
+//     const contentBox = document.querySelector('#' +  this.dataset.tab);
+//     contentBox.classList.remove('hidden');
+//     });
+//   });
+
+// });
+
+// const headButtons = document.querySelectorAll('[data-button]');
+
+// headButtons.forEach(function(item){
+
+// item.addEventListener('click', function(event){
+//   event.preventDefault();
+
+//     document.querySelector('#' +  this.dataset.button).animate({
+//       scrollTop: this.getAttribute('href').offset().top
+//   }, 400);
+//   return false;;
+    
+//   // item.setAttribute('href',section);
+//  });
+
+// });
+
+
+
+// let array = [2005,5,1.5,"Arkadi","Pult"];
+
+// for(i = 0; i < array.length; i++){
+//   if(array[i]=="Pult"){
+//     continue;
+//   }
+//   console.log(array[i]);
+// }
+
+
+
+
+
+
+
 
 // for (i = 0; i <= 10; i++){
 //   if(i % 2 = 0){
