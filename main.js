@@ -24,7 +24,6 @@ const activeDot = n => {
         dot.classList.remove('active');
     }
     dots[n].classList.add('active');
-    console.log(n);
 }
 
 const nextSlide = () => {

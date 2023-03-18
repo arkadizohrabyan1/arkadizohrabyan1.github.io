@@ -70,6 +70,7 @@ header span{
 	line-height: 33px;
 	display: inline-block;
     margin: 5px;
+	cursor:default;
 }
 
 .logo-name{
@@ -98,7 +99,6 @@ header span{
 }
 
 .ham-menu:active{
-
 	transform: rotateZ(90deg) ;
 } 
 
@@ -410,6 +410,7 @@ transform: scale(1.1) ;
 	outline: none;
 	color: #CEE1FB;
 	font-size: 42px;
+	transition: 0.2s ease;
 }
 
 .slider-arrow:hover{
@@ -432,10 +433,11 @@ transform: scale(1.1) ;
 	border-radius: 50px;
 	outline: none;
 	margin-right: 18px;
+	transition: 0.2s ease;
 }
 
 .slider-dot:hover{
-	background-color: #5B9BF3;
+	background-color: #9ec5fc;
 	cursor: pointer;
 }
 
@@ -577,9 +579,8 @@ footer h3{
 
 .hidden{
 	display: none;
+	transition: 0.4s ease-in;
 }
-
-
 
 
 @media (max-width: 1399px){
